@@ -1,0 +1,17 @@
+{
+  "name": "com.abledbody.bindhandler",
+  "version": "1.0.0",
+  "description": "",
+  "displayName": "BindHandler",
+  "author": {
+    "name": "abledbody",
+    "email": "abledbody.gamedev@gmail.com",
+    "url": "https://github.com/abledbody"
+  },
+  "documentationUrl": "",
+  "licensesUrl": "",
+  "samples": [
+  ],
+  "keywords": [
+  ]
+}
