@@ -1,8 +1,8 @@
 {
-  "name": "com.abledbody.bindhandler",
+  "name": "com.abledbody.ufp.basics",
   "version": "1.0.0",
   "description": "",
-  "displayName": "BindHandler",
+  "displayName": "UFP basics",
   "author": {
     "name": "abledbody",
     "email": "abledbody.gamedev@gmail.com",
