@@ -27,6 +27,26 @@ namespace UnityForProgrammers {
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Object RR(this Object @this) => @this.ReliableReference();
 		
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static GameObject Instantiate(this GameObject @this) => Object.Instantiate(@this);
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static GameObject Instantiate(this GameObject @this, Vector3 position, Quaternion rotation) => Object.Instantiate(@this, position, rotation);
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static GameObject Instantiate(this GameObject @this, Transform parent) => Object.Instantiate(@this, parent);
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static GameObject Instantiate(this GameObject @this, Vector3 position, Quaternion rotation, Transform parent) => Object.Instantiate(@this, position, rotation, parent);
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static T Instantiate<T>(this T @this) where T : Component => Object.Instantiate(@this);
+		
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static void Destroy(this Object @this) => Object.Destroy(@this);
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static void Destroy(this Object @this, float t) => Object.Destroy(@this, t);
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static void DestroyImmediate(this Object @this) => Object.DestroyImmediate(@this);
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static void DestroyImmediate(this Object @this, bool allowDestroyingAssets) => Object.DestroyImmediate(@this, allowDestroyingAssets);
+		
 		/// <summary>
 		/// Checks if the layer mask contains the specified layer index.
 		/// </summary>
