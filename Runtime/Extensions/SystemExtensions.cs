@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
 namespace UnityForProgrammers {
@@ -13,6 +14,7 @@ namespace UnityForProgrammers {
 		/// <param name="enumerable">The IEnumerable to iterate over.</param>
 		/// <param name="action">The action to perform on each item.</param>
 		/// <returns>The original IEnumerable.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static IEnumerable<T> ForEach<T>(this IEnumerable<T> enumerable, Action<T> action) {
 			foreach (var item in enumerable) {
 				action(item);
@@ -25,6 +27,7 @@ namespace UnityForProgrammers {
 		/// </summary>
 		/// <param name="this">The string to test.</param>
 		/// <returns><c>true</c> if the value parameter is <c>null</c> or an empty string (""); otherwise, <c>false.</c></returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool IsNullOrEmpty(this string @this) => string.IsNullOrEmpty(@this);
 		
 		/// <summary>
@@ -34,6 +37,7 @@ namespace UnityForProgrammers {
 		/// <param name="from">The string to replace.</param>
 		/// <param name="to">The string to replace with.</param>
 		/// <returns><c>to</c> if <c>this</c> is equal to <c>from</c>; otherwise, <c>this</c>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static string Convert(this string @this, string from, string to) =>
 			@this == from ? to : @this;
 		
@@ -44,6 +48,7 @@ namespace UnityForProgrammers {
 		/// <param name="pattern">The pattern to remove.</param>
 		/// <param name="result">The original string, but with the pattern removed.</param>
 		/// <returns><c>true</c> if anything remains after the pattern is removed; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool TryIsolate(this string @this, string pattern, out string result) {
 			result = Regex.Replace(@this, pattern, "");
 			return !result.IsNullOrEmpty();
@@ -56,6 +61,7 @@ namespace UnityForProgrammers {
 		/// <param name="pattern">The pattern to remove.</param>
 		/// <param name="result">The original string, but with the pattern removed.</param>
 		/// <returns><c>true</c> if anything was removed; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool TryRemove(this string @this, string pattern, out string result) {
 			result = Regex.Replace(@this, pattern, "");
 			return result != @this;
@@ -67,6 +73,7 @@ namespace UnityForProgrammers {
 		/// <typeparam name="T">The type of the ordered enumerable.</typeparam>
 		/// <param name="this">The ordered enumerable to pick from.</param>
 		/// <returns>A random item from the ordered enumerable.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static T ChooseRandom<T>(this IOrderedEnumerable<T> @this) => @this.ElementAt(UnityEngine.Random.Range(0, @this.Count()));
 		
 		/// <summary>
@@ -76,6 +83,7 @@ namespace UnityForProgrammers {
 		/// <param name="this">The ordered enumerable to pick from.</param>
 		/// <param name="rng">The random number generator to use.</param>
 		/// <returns>A random item from the ordered enumerable.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static T ChooseRandom<T>(this IOrderedEnumerable<T> @this, Random rng) => @this.ElementAt(rng.Next(@this.Count()));
 		
 		/// <summary>
@@ -86,6 +94,7 @@ namespace UnityForProgrammers {
 		/// <param name="this">A collection of values.</param>
 		/// <param name="keySelector">A function which returns a collection of keys for each value.</param>
 		/// <returns>A dictionary mapping several keys to each value in the original collection.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Dictionary<TKey, TValue> ManyToOne<TKey, TValue>(this IEnumerable<TValue> @this, Func<TValue, IEnumerable<TKey>> keySelector) {
 			Dictionary<TKey, TValue> dictionary = new();
 			foreach (var collection in @this) {
