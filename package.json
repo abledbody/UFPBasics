@@ -1,17 +1,11 @@
 {
   "name": "com.abledbody.ufp.basics",
   "version": "0.0.0",
-  "description": "",
-  "displayName": "UFP basics",
+  "description": "Basic things that any developer would want to have.",
+  "displayName": "UFP Basics",
   "author": {
     "name": "abledbody",
     "email": "abledbody.gamedev@gmail.com",
-    "url": "https://github.com/abledbody"
-  },
-  "documentationUrl": "",
-  "licensesUrl": "",
-  "samples": [
-  ],
-  "keywords": [
-  ]
+    "url": "https://github.com/abledbody/UFPBasics"
+  }
 }
