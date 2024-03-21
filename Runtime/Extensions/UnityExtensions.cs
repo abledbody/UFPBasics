@@ -28,15 +28,13 @@ namespace UnityForProgrammers {
 		public static Object RR(this Object @this) => @this.ReliableReference();
 		
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static GameObject Instantiate(this GameObject @this) => Object.Instantiate(@this);
+		public static T Instantiate<T>(this T @this) where T : Object => Object.Instantiate(@this);
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static GameObject Instantiate(this GameObject @this, Vector3 position, Quaternion rotation) => Object.Instantiate(@this, position, rotation);
+		public static T Instantiate<T>(this T @this, Vector3 position, Quaternion rotation) where T : Object => Object.Instantiate(@this, position, rotation);
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static GameObject Instantiate(this GameObject @this, Transform parent) => Object.Instantiate(@this, parent);
+		public static T Instantiate<T>(this T @this, Transform parent) where T : Object => Object.Instantiate(@this, parent);
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static GameObject Instantiate(this GameObject @this, Vector3 position, Quaternion rotation, Transform parent) => Object.Instantiate(@this, position, rotation, parent);
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static T Instantiate<T>(this T @this) where T : Component => Object.Instantiate(@this);
+		public static T Instantiate<T>(this T @this, Vector3 position, Quaternion rotation, Transform parent) where T : Object => Object.Instantiate(@this, position, rotation, parent);
 		
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void Destroy(this Object @this) => Object.Destroy(@this);
