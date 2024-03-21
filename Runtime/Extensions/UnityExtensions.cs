@@ -45,6 +45,16 @@ namespace UnityForProgrammers {
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void DestroyImmediate(this Object @this, bool allowDestroyingAssets) => Object.DestroyImmediate(@this, allowDestroyingAssets);
 		
+		/// <summary>Gets and assigns a component to a field.</summary>
+		/// <typeparam name="TComponent">The type of component to fetch.</typeparam>
+		/// <param name="this">The MonoBehaviour instance to fetch the component from.</param>
+		/// <param name="comp">The field to assign the component to.</param>
+		/// <returns>The MonoBehaviour instance.</returns>
+		public static MonoBehaviour Link<TComponent>(this MonoBehaviour @this, ref TComponent comp) where TComponent : Component {
+			comp = @this.GetComponent<TComponent>();
+			return @this;
+		}
+		
 		/// <summary>
 		/// Checks if the layer mask contains the specified layer index.
 		/// </summary>
