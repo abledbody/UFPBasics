@@ -176,5 +176,15 @@ namespace UnityForProgrammers {
 			}
 			return dictionary;
 		}
+		
+		/// <summary>Assigns a variable in a method chain.</summary>
+		/// <param name="value">The value to assign.</param>
+		/// <param name="result">The variable to assign the value to.</param>
+		/// <returns>The object the method was called on.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static TChain Assign<TChain, TValue>(this TChain @this, TValue value, out TValue result) {
+			result = value;
+			return @this;
+		}
 	}
 }
