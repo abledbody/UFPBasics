@@ -25,7 +25,11 @@ namespace UnityForProgrammers {
 		/// <returns>Whether or not lhs and rhs have the same sign.</returns>
 		/// <remarks>Values of 0 are always considered to have the same sign as the other value.</remarks>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool SameSign(this int lhs, int rhs) => lhs * rhs >= 0;
+		// NOTE: Using XOR in this operation is only possible with integers.
+		// When XORing two valid floats, it is possible to create an absurd result which cannot be meaningfully compared to zero.
+		// Additionally, the use of XOR is done cautiously, with a full understanding of how C# handles integers.
+		// Don't do tricks like this unless you're sure you understand the implications.
+		public static bool SameSign(this int lhs, int rhs) => (lhs ^ rhs) >= 0;
 	#endregion
 		
 	#region InRange
