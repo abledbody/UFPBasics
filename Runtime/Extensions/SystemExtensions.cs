@@ -186,5 +186,53 @@ namespace UnityForProgrammers {
 			result = value;
 			return @this;
 		}
+		
+		/// <summary>
+		/// Organizes the items in the collection into two groups, based on the predicate.
+		/// Relative positions within the groups are not preserved.
+		/// </summary>
+		/// <param name="this">The collection to stratify.</param>
+		/// <param name="predicate">The predicate that indicates that the item is beyond the separation point.</param>
+		/// <returns>A tuple containing an array separated into the two groups, and the first index which is not in the first group.</returns>
+		public static (T[] items, int index) StratifyUnstable<T>(this IEnumerable<T> @this, Func<T, bool> predicate) {
+			// We want to index from both sides, and we need to copy the collection anyway,
+			// so we might as well convert it to an array.
+			// Also, since an array is IEnumerable, there's no reason not to return it as-is.
+			T[] output = @this.ToArray();
+			
+			// 0 items is implicitly handled because maxIndex will be -1, bypassing the outer loop,
+			// and the separation index will be 0, which is the right answer, because it's the first index that
+			// is not in the first group, (or any group, for that matter.)
+			// We handle 1 item here because maxIndex will be 0,
+			// and the outer loop will not run, causing the item to never be classified.
+			if (output.Length == 1) return (output, predicate(output[0]) ? 0 : 1);
+			
+			int minIndex = 0;
+			int maxIndex = output.Length - 1;
+			
+			while (minIndex < maxIndex) {
+				// Find the first item that should be in the second group.
+				// If minIndex exceeds the length of the array, everything must belong to the first group.
+				while (minIndex < output.Length && !predicate(output[minIndex]))
+					minIndex++;
+				
+				// Find the last item that should be in the first group.
+				// If minIndex >= maxIndex after decrementing maxIndex, minIndex is either beyond the end of the array,
+				// or is sitting at the first item that should be in the second group.
+				// In either case, we are done.
+				while (predicate(output[maxIndex])) {
+					maxIndex--;
+					if (minIndex >= maxIndex) goto finished;
+				}
+				
+				// Swap the two items.
+				(output[minIndex], output[maxIndex]) = (output[maxIndex], output[minIndex]);
+				// We are confident that these two indices are handled, so we can move on.
+				maxIndex--;
+				minIndex++;
+			}
+			finished:
+			return (output, minIndex);
+		}
 	}
 }
