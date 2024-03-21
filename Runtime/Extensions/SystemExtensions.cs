@@ -22,6 +22,7 @@ namespace UnityForProgrammers {
 			}
 		}
 		
+	#region String Extensions
 		/// <summary>
 		/// Indicates whether the specified string is <c>null</c> or an empty string ("").
 		/// </summary>
@@ -66,6 +67,7 @@ namespace UnityForProgrammers {
 			result = Regex.Replace(@this, pattern, "");
 			return result != @this;
 		}
+	#endregion String Extensions
 		
 		/// <summary>
 		/// Picks a random item from an ordered enumerable.
