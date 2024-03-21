@@ -42,6 +42,76 @@ namespace UnityForProgrammers {
 		public static string Convert(this string @this, string from, string to) =>
 			@this == from ? to : @this;
 		
+	#region Case Conversion
+		/// <summary>Replaces spaces and punctuation with a specified string.</summary>
+		/// <param name="this">The original string.</param>
+		/// <param name="replacement">The string to replace spaces and punctuation with.</param>
+		/// <returns>The original string, but with spaces and punctuation replaced with <c>replacement</c>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static string ReplaceSpacers(this string @this, string replacement) {
+			if (@this.IsNullOrEmpty()) return @this;
+			return Regex.Replace(@this, @"[\W]+", replacement);
+		}
+		
+		/// <summary>Converts a string to PascalCase.</summary>
+		/// <param name="this">The original string.</param>
+		/// <returns>The original string, but with no separators, and the first letter of each word capitalized.</returns>
+		public static string ToPascalCase(this string @this) {
+			if (@this.IsNullOrEmpty()) return @this;
+			
+			// Split the string into words.
+			string[] words = Regex.Split(@this, @"[\W]+");
+			
+			// Decapitalize each word and capitalize the first letter of each word.
+			for (int i = 0; i < words.Length; i++) {
+				if (words[i].IsNullOrEmpty()) continue;
+				words[i] = words[i].Substring(0, 1).ToUpper() + words[i].Substring(1).ToLower();
+			}
+			
+			// Concatenate the words into a single string.
+			return string.Concat(words);
+		}
+		
+		/// <summary>Converts a string to camelCase.</summary>
+		/// <param name="this">The original string.</param>
+		/// <returns>The original string, but with no separators, and the first letter of each word capitalized, except the first word.</returns>
+		public static string ToCamelCase(this string @this) {
+			if (@this.IsNullOrEmpty()) return @this;
+			
+			// Split the string into words.
+			string[] words = Regex.Split(@this, @"[\W]+");
+			
+			// Decapitalize each word and capitalize the first letter of each word, except the first word.
+			for (int i = 0; i < words.Length; i++) {
+				if (words[i].IsNullOrEmpty()) continue;
+				words[i] = i == 0 ? words[i].ToLower() : words[i].Substring(0, 1).ToUpper() + words[i].Substring(1).ToLower();
+			}
+			
+			// Concatenate the words into a single string.
+			return string.Concat(words);
+		}
+		
+		/// <summary>Converts a string to snake_case.</summary>
+		/// <param name="this">The original string.</param>
+		/// <returns>The original string, but with spaces and punctuation replaced with underscores, and all letters lowercased.</returns>
+		public static string ToSnakeCase(this string @this) => @this.ReplaceSpacers("_").ToLower();
+		
+		/// <summary>Converts a string to SCREAMING_SNAKE_CASE.</summary>
+		/// <param name="this">The original string.</param>
+		/// <returns>The original string, but with spaces and punctuation replaced with underscores, and all letters uppercased.</returns>
+		public static string ToScreamingSnakeCase(this string @this) => @this.ReplaceSpacers("_").ToUpper();
+		
+		/// <summary>Converts a string to kebab-case.</summary>
+		/// <param name="this">The original string.</param>
+		/// <returns>The original string, but with spaces and punctuation replaced with hyphens, and all letters lowercased.</returns>
+		public static string ToKebabCase(this string @this) => @this.ReplaceSpacers("-").ToLower();
+		
+		/// <summary>Converts a string to SCREAMING-KEBAB-CASE.</summary>
+		/// <param name="this">The original string.</param>
+		/// <returns>The original string, but with spaces and punctuation replaced with hyphens, and all letters uppercased.</returns>
+		public static string ToScreamingKebabCase(this string @this) => @this.ReplaceSpacers("-").ToUpper();
+	#endregion Case Conversion
+		
 		/// <summary>
 		/// Attempts to remove a pattern from a string.
 		/// </summary>
