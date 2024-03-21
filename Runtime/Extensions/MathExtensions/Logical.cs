@@ -41,6 +41,16 @@ namespace UnityForProgrammers {
 		/// <param name="max">The maximum value of the range.</param>
 		/// <returns>Whether or not val lies between min and max.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static bool InRange(this int val, int min, int max) => val >= min && val <= max;
+		
+		/// <summary>
+		/// Determines if a value is within a specified range.
+		/// </summary>
+		/// <param name="val">The value to check.</param>
+		/// <param name="min">The minimum value of the range.</param>
+		/// <param name="max">The maximum value of the range.</param>
+		/// <returns>Whether or not val lies between min and max.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool InRange(this float val, float min, float max) => val >= min && val <= max;
 		
 		/// <summary>
