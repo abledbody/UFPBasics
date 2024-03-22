@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['phi_0',['PHI',['../class_unity_for_programmers_1_1_math_extensions.html#ac42bd9189894bf636ab21448367f9a28',1,'UnityForProgrammers::MathExtensions']]],
-  ['pi_1',['PI',['../class_unity_for_programmers_1_1_math_extensions.html#a27590e141b0070e4837c105443141423',1,'UnityForProgrammers::MathExtensions']]]
+  ['items_0',['items',['../class_unity_for_programmers_1_1_system_extensions.html#a6be890543104875b4903617df6fa7ec1',1,'UnityForProgrammers::SystemExtensions']]]
 ];

@@ -398,6 +398,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af4f7814261be874a9fdf894df894d5dc" id="r_af4f7814261be874a9fdf894df894d5dc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4f7814261be874a9fdf894df894d5dc">SameSign</a> (this int lhs, int rhs)</td></tr>
 <tr class="memdesc:af4f7814261be874a9fdf894df894d5dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns false if lhs and rhs have opposite signs, otherwise true.  <br /></td></tr>
 <tr class="separator:af4f7814261be874a9fdf894df894d5dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00618a5a5834cf524f3ce884354f2742" id="r_a00618a5a5834cf524f3ce884354f2742"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00618a5a5834cf524f3ce884354f2742">InRange</a> (this int val, int min, int max)</td></tr>
+<tr class="memdesc:a00618a5a5834cf524f3ce884354f2742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if a value is within a specified range.  <br /></td></tr>
+<tr class="separator:a00618a5a5834cf524f3ce884354f2742"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfe70437e0d025dc20aefd711a4847e0" id="r_abfe70437e0d025dc20aefd711a4847e0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfe70437e0d025dc20aefd711a4847e0">InRange</a> (this float val, float min, float max)</td></tr>
 <tr class="memdesc:abfe70437e0d025dc20aefd711a4847e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if a value is within a specified range.  <br /></td></tr>
 <tr class="separator:abfe70437e0d025dc20aefd711a4847e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2301,7 +2304,7 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><b>E</b> = 2.7182
 </div>
 </div>
 <a id="abfe70437e0d025dc20aefd711a4847e0" name="abfe70437e0d025dc20aefd711a4847e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfe70437e0d025dc20aefd711a4847e0">&#9670;&#160;</a></span>InRange() <span class="overload">[1/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abfe70437e0d025dc20aefd711a4847e0">&#9670;&#160;</a></span>InRange() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2345,8 +2348,53 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><b>E</b> = 2.7182
 
 </div>
 </div>
+<a id="a00618a5a5834cf524f3ce884354f2742" name="a00618a5a5834cf524f3ce884354f2742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00618a5a5834cf524f3ce884354f2742">&#9670;&#160;</a></span>InRange() <span class="overload">[2/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool UnityForProgrammers.MathExtensions.InRange </td>
+          <td>(</td>
+          <td class="paramtype">this int</td>          <td class="paramname"><span class="paramname"><em>val</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>min</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines if a value is within a specified range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>The value to check.</td></tr>
+    <tr><td class="paramname">min</td><td>The minimum value of the range.</td></tr>
+    <tr><td class="paramname">max</td><td>The maximum value of the range.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether or not val lies between min and max.</dd></dl>
+
+</div>
+</div>
 <a id="a4d3fa49dcb4a2e20ebf36c7194d74800" name="a4d3fa49dcb4a2e20ebf36c7194d74800"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d3fa49dcb4a2e20ebf36c7194d74800">&#9670;&#160;</a></span>InRange() <span class="overload">[2/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d3fa49dcb4a2e20ebf36c7194d74800">&#9670;&#160;</a></span>InRange() <span class="overload">[3/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2385,7 +2433,7 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><b>E</b> = 2.7182
 </div>
 </div>
 <a id="a58a7a567bb1f3b2c3d3172eeff88d622" name="a58a7a567bb1f3b2c3d3172eeff88d622"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58a7a567bb1f3b2c3d3172eeff88d622">&#9670;&#160;</a></span>InRange() <span class="overload">[3/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a58a7a567bb1f3b2c3d3172eeff88d622">&#9670;&#160;</a></span>InRange() <span class="overload">[4/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2430,7 +2478,7 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><b>E</b> = 2.7182
 </div>
 </div>
 <a id="aedecbdd1ff6c3653185b7bec1605bd47" name="aedecbdd1ff6c3653185b7bec1605bd47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedecbdd1ff6c3653185b7bec1605bd47">&#9670;&#160;</a></span>InRange() <span class="overload">[4/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aedecbdd1ff6c3653185b7bec1605bd47">&#9670;&#160;</a></span>InRange() <span class="overload">[5/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2469,7 +2517,7 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><b>E</b> = 2.7182
 </div>
 </div>
 <a id="afa72052d5475033b590677e2ccb3df47" name="afa72052d5475033b590677e2ccb3df47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa72052d5475033b590677e2ccb3df47">&#9670;&#160;</a></span>InRange() <span class="overload">[5/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afa72052d5475033b590677e2ccb3df47">&#9670;&#160;</a></span>InRange() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2514,7 +2562,7 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><b>E</b> = 2.7182
 </div>
 </div>
 <a id="a2f66537996b5aa555aaf9de7a8b6c171" name="a2f66537996b5aa555aaf9de7a8b6c171"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f66537996b5aa555aaf9de7a8b6c171">&#9670;&#160;</a></span>InRange() <span class="overload">[6/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f66537996b5aa555aaf9de7a8b6c171">&#9670;&#160;</a></span>InRange() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2553,7 +2601,7 @@ const float&#160;</td><td class="memItemRight" valign="bottom"><b>E</b> = 2.7182
 </div>
 </div>
 <a id="ae653b66bdf95906cdfd00df72d48036d" name="ae653b66bdf95906cdfd00df72d48036d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae653b66bdf95906cdfd00df72d48036d">&#9670;&#160;</a></span>InRange() <span class="overload">[7/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae653b66bdf95906cdfd00df72d48036d">&#9670;&#160;</a></span>InRange() <span class="overload">[8/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

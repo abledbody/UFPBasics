@@ -1,5 +1,5 @@
 {
-    "name": "abledbody.ufp.basics.Runtime.Tests",
+    "name": "com.abledbody.ufp.basics.Editor.Tests",
     "rootNamespace": "",
     "references": [
         "GUID:5c291e9041126c64b94cabf4e297b414",
