@@ -55,6 +55,16 @@ namespace UnityForProgrammers {
 			return @this;
 		}
 		
+		/// <summary>Gets and assigns a component to a RefGuard.</summary>
+		/// <typeparam name="TComponent">The type of component to fetch.</typeparam>
+		/// <param name="this">The GameObject to fetch the component from.</param>
+		/// <param name="comp">The RefGuard to assign the component to.</param>
+		/// <returns>The GameObject.</returns>
+		public static GameObject Link<TComponent>(this GameObject @this, ref RefGuard<TComponent> comp) where TComponent : Component {
+			comp = new(@this.GetComponent<TComponent>());
+			return @this;
+		}
+		
 		/// <summary>
 		/// Checks if the layer mask contains the specified layer index.
 		/// </summary>
