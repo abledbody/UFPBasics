@@ -47,10 +47,10 @@ namespace UnityForProgrammers {
 		
 		/// <summary>Gets and assigns a component to a field.</summary>
 		/// <typeparam name="TComponent">The type of component to fetch.</typeparam>
-		/// <param name="this">The MonoBehaviour instance to fetch the component from.</param>
+		/// <param name="this">The GameObject to fetch the component from.</param>
 		/// <param name="comp">The field to assign the component to.</param>
-		/// <returns>The MonoBehaviour instance.</returns>
-		public static MonoBehaviour Link<TComponent>(this MonoBehaviour @this, ref TComponent comp) where TComponent : Component {
+		/// <returns>The GameObject.</returns>
+		public static GameObject Link<TComponent>(this GameObject @this, ref TComponent comp) where TComponent : Component {
 			comp = @this.GetComponent<TComponent>();
 			return @this;
 		}
