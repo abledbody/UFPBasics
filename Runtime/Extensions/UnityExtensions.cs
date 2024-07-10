@@ -50,7 +50,7 @@ namespace UnityForProgrammers {
 		/// <param name="this">The GameObject to fetch the component from.</param>
 		/// <param name="comp">The field to assign the component to.</param>
 		/// <returns>The GameObject.</returns>
-		public static GameObject Link<TComponent>(this GameObject @this, ref TComponent comp) where TComponent : Component {
+		public static GameObject Link<TComponent>(this GameObject @this, out TComponent comp) where TComponent : Component {
 			comp = @this.GetComponent<TComponent>();
 			return @this;
 		}

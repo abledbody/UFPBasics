@@ -7,8 +7,7 @@ public static class UnityExtensionTests {
 	public static void LinkTest() {
 		var gameObject = new GameObject();
 		var fakeMonoAdded = gameObject.AddComponent<FakeMono>();
-		FakeMono fakeMonoLinked = null;
-		gameObject.Link(ref fakeMonoLinked);
+		gameObject.Link(out FakeMono fakeMonoLinked);
 		Assert.IsNotNull(fakeMonoAdded);
 		Assert.IsNotNull(fakeMonoLinked);
 		Assert.AreEqual(fakeMonoAdded, fakeMonoLinked);
